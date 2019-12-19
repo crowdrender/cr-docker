@@ -36,7 +36,7 @@ _(you can get a token from [here](https://discovery.crowd-render.com/profile))_
 
 #### optional parameters:
 
-- `-e cr_version=<cr_version>`
+- `-e CR_VERSION=<cr_version>`
 
 **(the default value is always the latest version of CrowdRender)**
 
