@@ -4,7 +4,6 @@
 ### supported tags
 
 - `bl_2.81`, `latest` *(Blender 2.81a)*
-- `bl_2.80` *(Blender 2.80)*
 - `bl_2.79` *(Blender 2.79)*
 
 
@@ -45,7 +44,7 @@ _(you can get a token from [here](https://discovery.crowd-render.com/profile))_
 
 | Docker tag | Blender version | CR_VERSION | CrowdRender version |
 | :---: | :---: | :---: | :---: |
-| `bl_2.80`,`bl_2.81`, `latest` | `2.80`,`2.81a` | `cr_022_bl280` | `0.2.2` |
+| `bl_2.81`, `latest` | `2.81a` | `cr_022_bl280` | `0.2.2` |
 ||| `cr_021_bl280` | `0.2.1` |
 ||| `cr_020_bl280` | `0.2.0` |
 ||| `cr_018_bl280` | `0.1.8` |
@@ -64,8 +63,7 @@ _(you can get a token from [here](https://discovery.crowd-render.com/profile))_
 
 ## Extra bits
 
-**if you have any problems or questions, you can create an issue or feel free to contact us: info(at)crowdrender(dot)com(dot)au**
+**if you have any problems or questions, you can create an [issue](https://github.com/crowdrender/cr-docker/issues) or feel free to contact us: info(at)crowdrender(dot)com(dot)au**
 
-or send us feedback: https://www.crowd-render.com/report-a-problem
 
-[Crowdrender site](https://www.crowd-render.com/) 
+[Crowdrender website](https://www.crowd-render.com/) 
