@@ -1,5 +1,5 @@
-# official CrowdRender-Server docker image
-
+# official CrowdRender-Server docker image w/ GPU support
+[GitHub repo](https://github.com/crowdrender/cr-docker) 
 
 ### most important tags
 
@@ -105,5 +105,5 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/d
 
 **if you have any problems or questions, you can create an [issue](https://github.com/crowdrender/cr-docker/issues) or feel free to contact us: info(at)crowdrender(dot)com(dot)au**
 
-
+[DockerHub repo](https://hub.docker.com/r/zocker160/blender-crowdrender) 
 [Crowdrender website](https://www.crowd-render.com/) 
