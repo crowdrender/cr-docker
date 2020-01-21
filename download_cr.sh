@@ -1,5 +1,5 @@
 #! /bin/bash
-# made by zocker1600 (c) Crowdrender 2019
+# made by zocker1600 (c) Crowdrender 2019 - 2020
 
 echo "using token for login...."
 
