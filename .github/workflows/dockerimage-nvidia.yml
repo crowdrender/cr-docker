@@ -23,11 +23,3 @@ jobs:
         docker build . --file Dockerfile.cuda10 --tag zocker160/blender-crowdrender:nvidia
         docker tag zocker160/blender-crowdrender:nvidia zocker160/blender-crowdrender:bl_2.81_cu_10
         docker push zocker160/blender-crowdrender
-
-    - name: Add Readme to DockerHub
-      uses: peter-evans/dockerhub-description@v2.1.0
-      env:
-        DOCKERHUB_USERNAME: ${{ secrets.DOCKER_NAME }}
-        DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
-        DOCKERHUB_REPOSITORY: zocker160/blender-crowdrender
-        README_FILEPATH: ./README.md
