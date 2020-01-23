@@ -1,7 +1,7 @@
-# official CrowdRender-Server docker image w/ GPU support
+# Official CrowdRender-Server docker image w/ GPU support
 [GitHub repo](https://github.com/crowdrender/cr-docker) 
 
-### most important tags
+### Most Important Tags
 
 - `bl_2.81`, `latest`, `nvidia` *(Blender 2.81a)*
 - `bl_2.79`, `bl_2.79_cu_10.1` *(Blender 2.79)*
@@ -33,14 +33,14 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 _(you can get a token from [here](https://discovery.crowd-render.com/profile))_
 - `--net=host` this sets the image to run in the `host`-network
 
-#### optional parameters:
+#### Optional Parameters:
 
 - `-e CR_VERSION=<cr_version>`
 
 **(the default value is always the latest version of CrowdRender)**
 
 
-## Version table
+## Version Table
 
 | Docker tag | Blender version | CR_VERSION | CrowdRender version |
 | :---: | :---: | :---: | :---: |
@@ -67,7 +67,7 @@ In order to make this image work, you need to have [nvidia-docker2](https://gith
 
 You will also need to have the [Nvidia-CUDA-toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64)  to be installed.
 
-### Version table
+### Version Table
 
 | Docker tag | Blender | CUDA |
 | :--------------: | :---------: | :-------: |
@@ -101,7 +101,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/d
 - `--net=host` this sets the image to run in the `host`-network (alternatively you could forward the default ports `9000`-`9010`)
 - `--runtime=nvidia` this enables the passthrough to the GPU(s)
 
-## Extra bits
+## Extra Bits
 
 **if you have any problems or questions, you can create an [issue](https://github.com/crowdrender/cr-docker/issues) or feel free to contact us: info(at)crowdrender(dot)com(dot)au**
 
