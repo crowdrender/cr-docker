@@ -34,6 +34,7 @@ WORKDIR /CR
 COPY download_cr.sh .
 COPY start_cr_server_gpu.sh .
 COPY install_addon.py .
+COPY activate_gpu.py .
 
 RUN chmod +x ./download_cr.sh && chmod +x ./start_cr_server_gpu.sh
 RUN chmod -R 777 /CR
