@@ -28,7 +28,7 @@ download_cr (){
 start_server (){
 	# start the CR server
 	echo "starting crowdrender server....................."
-	/usr/local/blender/blender -b -noaudio --python /root/.config/blender/2.80/scripts/addons/crowdrender/src/py_3_7/serv_int_start.py -- -ct "$token" -t "server_int_proc"
+	/usr/local/blender/blender -b -noaudio --python /root/.config/blender/2.81/scripts/addons/crowdrender/src/py_3_7/serv_int_start.py -- -ct "$token" -t "server_int_proc"
 }
 
 
