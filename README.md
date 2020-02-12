@@ -31,7 +31,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 - `--name` here you can set the name of the docker image
 - `-e token` this is mandatory in order to download the lastest CR version and for the connection to the CR server
 _(you can get a token from [here](https://discovery.crowd-render.com/profile))_
-- `--net=host` this sets the image to run in the `host`-network
+- `--net=host` this sets the image to run in the `host`-network (alternatively you could forward the default ports `9000`-`9025`)
 
 #### Optional Parameters:
 
@@ -98,7 +98,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/d
 #### Usage
 
 - `--name` here you can set the name of the docker image
-- `--net=host` this sets the image to run in the `host`-network (alternatively you could forward the default ports `9000`-`9010`)
+- `--net=host` this sets the image to run in the `host`-network (alternatively you could forward the default ports `9000`-`9025`)
 - `--runtime=nvidia` this enables the passthrough to the GPU(s)
 
 ## Extra Bits
