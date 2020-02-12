@@ -16,7 +16,7 @@ To start the docker image run:
 ```
 docker run -t \
  --name "Crowdrender-Server" \
- --token=<login_token> \
+ -e token=<login_token> \
  --net=host \
 zocker160/blender-crowdrender:latest
 ```
@@ -29,7 +29,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 ## Usage
 
 - `--name` here you can set the name of the docker image
-- `--token` this is mandatory in order to download the lastest CR version and for the connection to the CR server
+- `-e token` this is mandatory in order to download the lastest CR version and for the connection to the CR server
 _(you can get a token from [here](https://discovery.crowd-render.com/profile))_
 - `--net=host` this sets the image to run in the `host`-network
 
@@ -63,9 +63,9 @@ _(you can get a token from [here](https://discovery.crowd-render.com/profile))_
 
 ## Instructions for GPU (nvidia)
 
-In order to make this image work, you need to have [nvidia-docker2](https://github.com/NVIDIA/nvidia-docker) installed to enable passthru on the nvidia card(s).
+In order to make this image work, you need Docker >= 19.03 and the latest [NVIDIA driver](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver) NVIDIA driver installed on your host system.
 
-You will also need to have the [Nvidia-CUDA-toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64)  to be installed.
+You also need to have the [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster) installed.
 
 ### Version Table
 
@@ -85,8 +85,8 @@ To start the docker image run:
 docker run -t \
  --name "Crowdrender-Server" \
  --net=host \
- --token=<login_token> \
- --runtime=nvidia \
+ -e token=<login_token> \
+ --gpus all \
 zocker160/blender-crowdrender:nvidia
 ```
 
