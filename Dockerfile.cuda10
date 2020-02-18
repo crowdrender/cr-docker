@@ -2,9 +2,9 @@ FROM nvidia/cuda:10.2-base
 
 MAINTAINER zocker-160
 
-ENV BLENDER_MAJOR 2.81
-ENV BLENDER_VERSION 2.81a
-ENV BLENDER_BZ2_URL https://mirror.clarkson.edu/blender/release/Blender$BLENDER_MAJOR/blender-$BLENDER_VERSION-linux-glibc217-x86_64.tar.bz2
+ENV BLENDER_VERSION 2.82
+ENV BLENDER_MINOR 2.82
+ENV BLENDER_BZ2_URL https://mirror.clarkson.edu/blender/release/Blender$BLENDER_VERSION/blender-$BLENDER_MINOR-linux64.tar.xz
 
 ENV CR_VERSION cr_022_bl280
 
@@ -12,7 +12,7 @@ RUN \
 	apt-get update \
 	&& apt-get install -y wget \
 	unzip \
-	tar \
+	dtrx \
 	curl \
 	bzip2 \
 	libfreetype6 \
@@ -24,10 +24,11 @@ RUN \
 	&& apt-get -y autoremove \
 	&& rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /usr/local/blender \
-	&& curl -SL "$BLENDER_BZ2_URL" -o blender.tar.bz2 \
-	&& tar -jxvf blender.tar.bz2 -C /usr/local/blender --strip-components=1 \
-	&& rm blender.tar.bz2
+WORKDIR /usr/local
+
+RUN curl -SL "$BLENDER_BZ2_URL" -o blender.tar.xz \
+	&& dtrx -n --one rename blender.tar.xz \
+	&& rm blender.tar.xz
 
 
 WORKDIR /CR
