@@ -100,7 +100,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/d
 
 - `--name` here you can set the name of the docker image
 - `--net=host` this sets the image to run in the `host`-network (alternatively you could forward the default ports `9000`-`9025`)
-- `--runtime=nvidia` this enables the passthrough to the GPU(s)
+- `--gpus all` this enables the passthrough to the GPU(s)
 
 ## Extra Bits
 
