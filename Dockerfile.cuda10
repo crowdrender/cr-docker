@@ -6,7 +6,7 @@ ENV BLENDER_VERSION 2.82
 ENV BLENDER_MINOR 2.82a
 ENV BLENDER_BZ2_URL https://mirror.clarkson.edu/blender/release/Blender$BLENDER_VERSION/blender-$BLENDER_MINOR-linux64.tar.xz
 
-ENV CR_VERSION cr_022_bl280
+ENV CR_VERSION cr_023_bl280
 
 RUN \
 	apt-get update \
