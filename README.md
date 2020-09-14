@@ -5,11 +5,11 @@
 ### Most Important Tags
 
 - `bl_2.82`, `latest`, `nvidia` *(Blender 2.82a)*
-- `bl_2.79`, `bl_2.79_cu_10.1` *(Blender 2.79)*
+- `bl_2.79`, `bl_2.79_cu_10.1` *(Blender 2.79b)*
 
 ## Instructions for CPU
 
-Installation instructions for docker itself can be found [here](https://docs.docker.com/engine/install/debian/) or you can use [this](https://get.docker.com/) this installation script for quick & easy install.
+Installation instructions for docker itself can be found [here](https://docs.docker.com/engine/install/debian/) or you can use [this](https://get.docker.com/) installation script for quick & easy install.
 
 To start the docker image run:
 
@@ -28,13 +28,17 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 ## Usage
 
 - `--name` here you can set the name of the docker image
+
 - `-e token` this is mandatory in order to download the lastest CR version and for the connection to the CR server; `<`and `>` are **not** part of the token!
   _(you can get a token from [here](https://discovery.crowd-render.com/profile))_
+
 - `--net=host` this sets the image to run in the `host`-network and allows the application to open the ports on its own
+  
+  - (alternatively you could forward the default ports `9000`-`9025`)
 
 #### Optional Parameters:
 
-- `-e CR_VERSION=<cr_version>`
+- `-e CR_VERSION=<cr_version>` (note: `<` and `>` are **not** part of the version string)
 
 **(the default value is always the latest <u>free</u> version of CrowdRender)**
 
@@ -42,7 +46,8 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 | Docker tag          | Blender version | CR_VERSION           | CrowdRender version |
 |:-------------------:|:---------------:|:--------------------:|:-------------------:|
-| `bl_2.82`, `latest` | `2.82a`         | `cr_022_bl280`       | `0.2.2`             |
+| `bl_2.82`, `latest` | `2.82a`         | `cr_023_bl280`       | `0.2.3`             |
+|                     |                 | `cr_022_bl280`       | `0.2.2`             |
 |                     |                 | `cr_021_bl280`       | `0.2.1`             |
 |                     |                 | `cr_020_bl280`       | `0.2.0`             |
 |                     |                 | `cr_018_bl280`       | `0.1.8`             |
@@ -50,7 +55,8 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 |                     |                 | `cr_016_bl280`       | `0.1.6`             |
 |                     |                 | `cr_016_bl280_b`     | `0.1.6b`            |
 |                     |                 | `cr_016_bl280_c`     | `0.1.6c`            |
-| `bl_2.79`           | `2.79b`         | `cr_022_bl279`       | `0.2.2`             |
+| `bl_2.79`           | `2.79b`         | `cr_023_bl279`       | `0.2.3`             |
+|                     |                 | `cr_022_bl279`       | `0.2.2`             |
 |                     |                 | `cr_021_bl279`       | `0.2.1`             |
 |                     |                 | `cr_020_bl279`       | `0.2.0`             |
 |                     |                 | `cr_018_bl279`       | `0.1.8`             |
@@ -95,11 +101,20 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/d
 #### Usage
 
 - `--name` here you can set the name of the docker image
+
 - `-e token` this is mandatory in order to download the lastest CR version and for the connection to the CR server; `<`and `>` are **not** part of the token! 
   
   *(you can get a token from [here](https://discovery.crowd-render.com/profile))*
+
 - `--net=host` this sets the image to run in the `host`-network and allows the application to open the ports on its own
+
+- (alternatively you could forward the default ports `9000`-`9025`)
+
 - `--gpus all` this enables the passthrough to the GPU(s)
+
+#### Optional Parameters:
+
+- `-e CR_VERSION=<cr_version>` (note: `<` and `>` are **not** part of the version string)
 
 ## Extra Bits
 
