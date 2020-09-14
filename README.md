@@ -9,7 +9,7 @@
 
 ## Instructions for CPU
 
-Installation instructions for docker itself can be found  [here](https://docs.docker.com/engine/install/debian/) or you can use [this](https://get.docker.com/) this installation script for quick & easy install.
+Installation instructions for docker itself can be found [here](https://docs.docker.com/engine/install/debian/) or you can use [this](https://get.docker.com/) this installation script for quick & easy install.
 
 To start the docker image run:
 
@@ -28,7 +28,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 ## Usage
 
 - `--name` here you can set the name of the docker image
-- `-e token` this is mandatory in order to download the lastest CR version and for the connection to the CR server
+- `-e token` this is mandatory in order to download the lastest CR version and for the connection to the CR server; `<`and `>` are **not** part of the token!
   _(you can get a token from [here](https://discovery.crowd-render.com/profile))_
 - `--net=host` this sets the image to run in the `host`-network and allows the application to open the ports on its own
 
@@ -36,7 +36,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 - `-e CR_VERSION=<cr_version>`
 
-**(the default value is always the latest version of CrowdRender)**
+**(the default value is always the latest <u>free</u> version of CrowdRender)**
 
 ## Version Table
 
@@ -95,6 +95,9 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/d
 #### Usage
 
 - `--name` here you can set the name of the docker image
+- `-e token` this is mandatory in order to download the lastest CR version and for the connection to the CR server; `<`and `>` are **not** part of the token! 
+  
+  *(you can get a token from [here](https://discovery.crowd-render.com/profile))*
 - `--net=host` this sets the image to run in the `host`-network and allows the application to open the ports on its own
 - `--gpus all` this enables the passthrough to the GPU(s)
 
