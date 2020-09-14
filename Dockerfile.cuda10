@@ -1,35 +1,10 @@
-FROM nvidia/cuda:10.2-base
+FROM zocker160/blender:2.83-LTS-cuda10
 
 MAINTAINER zocker-160
 
-ENV BLENDER_VERSION 2.82
-ENV BLENDER_MINOR 2.82a
-ENV BLENDER_BZ2_URL https://mirror.clarkson.edu/blender/release/Blender$BLENDER_VERSION/blender-$BLENDER_MINOR-linux64.tar.xz
-
 ENV CR_VERSION cr_023_bl280
 
-RUN \
-	apt-get update \
-	&& apt-get install -y wget \
-	unzip \
-	dtrx \
-	curl \
-	bzip2 \
-	libfreetype6 \
-	libgl1-mesa-dev \
-	libglu1-mesa \
-	libxi6 \
-	libxrender1 \
-	jq \
-	&& apt-get -y autoremove \
-	&& rm -rf /var/lib/apt/lists/*
-
-WORKDIR /usr/local
-
-RUN curl -SL "$BLENDER_BZ2_URL" -o blender.tar.xz \
-	&& dtrx -n --one rename blender.tar.xz \
-	&& rm blender.tar.xz
-
+RUN apt-get update && apt-get install -y jq
 
 WORKDIR /CR
 COPY download_cr.sh .
@@ -40,4 +15,4 @@ COPY activate_gpu.py .
 RUN chmod +x ./download_cr.sh && chmod +x ./start_cr_server_gpu.sh
 RUN chmod -R 777 /CR
 
-CMD ./start_cr_server_gpu.sh
+ENTRYPOINT ./start_cr_server_gpu.sh

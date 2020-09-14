@@ -1,4 +1,4 @@
-FROM zocker160/blender:2.82-base
+FROM zocker160/blender:2.83-LTS
 
 MAINTAINER zocker-160
 
@@ -14,4 +14,4 @@ COPY install_addon.py .
 RUN chmod +x ./download_cr.sh && chmod +x ./start_cr_server.sh
 RUN chmod -R 777 /CR
 
-CMD ./start_cr_server.sh
+ENTRYPOINT ./start_cr_server.sh

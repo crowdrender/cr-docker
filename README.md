@@ -4,7 +4,7 @@
 
 ### Most Important Tags
 
-- `bl_2.82`, `latest`, `nvidia` *(Blender 2.82a)*
+- `bl_2.83`, `latest`, `nvidia` *(Blender 2.83 LTS)*
 - `bl_2.79`, `bl_2.79_cu_10.1` *(Blender 2.79b)*
 
 ## Instructions for CPU
@@ -46,7 +46,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 | Docker tag          | Blender version | CR_VERSION           | CrowdRender version |
 |:-------------------:|:---------------:|:--------------------:|:-------------------:|
-| `bl_2.82`, `latest` | `2.82a`         | `cr_023_bl280`       | `0.2.3`             |
+| `bl_2.83`, `latest` | `2.83 LTS`      | `cr_023_bl280`       | `0.2.3`             |
 |                     |                 | `cr_022_bl280`       | `0.2.2`             |
 |                     |                 | `cr_021_bl280`       | `0.2.1`             |
 |                     |                 | `cr_020_bl280`       | `0.2.0`             |
@@ -55,6 +55,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 |                     |                 | `cr_016_bl280`       | `0.1.6`             |
 |                     |                 | `cr_016_bl280_b`     | `0.1.6b`            |
 |                     |                 | `cr_016_bl280_c`     | `0.1.6c`            |
+| `bl_2.82`           | `2.82a`         | same as 2.83         | --                  |
 | `bl_2.79`           | `2.79b`         | `cr_023_bl279`       | `0.2.3`             |
 |                     |                 | `cr_022_bl279`       | `0.2.2`             |
 |                     |                 | `cr_021_bl279`       | `0.2.1`             |
@@ -73,13 +74,14 @@ You also need to have the [nvidia-container-toolkit](https://github.com/NVIDIA/n
 
 ### Version Table
 
-| Docker tag                | Blender | CUDA |
-|:-------------------------:|:-------:|:----:|
-| `bl_2.82_cu_10`, `nvidia` | 2.82a   | 10.2 |
-| `bl_2.81_cu_10`           | 2.81a   | 10.2 |
-| `bl_2.79_cu_10.1`         | 2.79b   | 10.1 |
-| `bl_2.79_cu_9.2`          | 2.79b   | 9.2  |
-| `bl_2.79_cu_7.5`          | 2.79b   | 7.5  |
+| Docker tag                | Blender  | CUDA |
+|:-------------------------:|:--------:|:----:|
+| `bl_2.83_cu_10`, `nvidia` | 2.83 LTS | 10.2 |
+| `bl_2.82_cu_10`           | 2.82a    | 10.2 |
+| `bl_2.81_cu_10`           | 2.81a    | 10.2 |
+| `bl_2.79_cu_10.1`         | 2.79b    | 10.1 |
+| `bl_2.79_cu_9.2`          | 2.79b    | 9.2  |
+| `bl_2.79_cu_7.5`          | 2.79b    | 7.5  |
 
 ## Instructions
 
@@ -107,8 +109,8 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/d
   *(you can get a token from [here](https://discovery.crowd-render.com/profile))*
 
 - `--net=host` this sets the image to run in the `host`-network and allows the application to open the ports on its own
-
-- (alternatively you could forward the default ports `9000`-`9025`)
+  
+  - (alternatively you could forward the default ports `9000`-`9025`)
 
 - `--gpus all` this enables the passthrough to the GPU(s)
 

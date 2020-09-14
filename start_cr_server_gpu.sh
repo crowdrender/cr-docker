@@ -15,10 +15,6 @@ download_cr (){
 		echo "installing crowdrender addon......."
 		/usr/local/blender/blender -b -noaudio --python install_addon.py
 		
-		# activate all GPUs (this is a workaround for a bug)
-		echo "activating all available GPUs......"
-		/usr/local/blender/blender -b -noaudio --python activate_gpu.py
-		
 		# show the installed version of blender for debugging purposes
 		echo "blender launch test:"
 		/usr/local/blender/blender -b --version
@@ -26,9 +22,13 @@ download_cr (){
 }
 
 start_server (){
+	# activate all GPUs (this is a workaround for a bug)
+	echo "activating all available GPUs......"
+	/usr/local/blender/blender -b -noaudio --python activate_gpu.py
+
 	# start the CR server
 	echo "starting crowdrender server....................."
-	/usr/local/blender/blender -b -noaudio --python /root/.config/blender/2.82/scripts/addons/crowdrender/src/py_3_7/serv_int_start.py -- -ct "$token" -t "server_int_proc"
+	/usr/local/blender/blender -b -noaudio --python /root/.config/blender/2.83/scripts/addons/crowdrender/src/py_3_7/serv_int_start.py -- -ct "$token" -t "server_int_proc"
 }
 
 
