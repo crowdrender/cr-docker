@@ -13,7 +13,7 @@ Installation instructions for docker itself can be found [here](https://docs.doc
 
 To start the docker image run:
 
-```
+```bash
 docker run -t \
  --name "Crowdrender-Server" \
  -e token=<login_token> \
@@ -87,7 +87,7 @@ An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacent
 
 To start the docker image run:
 
-```
+```bash
 docker run -t \
  --name "Crowdrender-Server" \
  --net=host \
