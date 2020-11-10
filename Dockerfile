@@ -2,7 +2,7 @@ FROM zocker160/blender:2.83-LTS
 
 MAINTAINER zocker-160
 
-ENV CR_VERSION cr_023_bl280
+ENV CR_VERSION cr_024_bl280
 
 RUN apt-get update && apt-get install -y jq
 
