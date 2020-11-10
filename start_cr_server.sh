@@ -21,10 +21,17 @@ download_cr() {
 #	fi
 }
 
+# check if machine_uuid is set
+if [ -z "$machine_uuid" ];
+then
+	echo "machine_uuid is not set...generating new unique UUID....."
+	machine_uuid=$(cat /proc/sys/kernel/random/uuid)
+fi
+
 start_server() {
 	# start the CR server
 	echo "starting crowdrender server....................."
-	/usr/local/blender/blender -b -noaudio --python /root/.config/blender/2.83/scripts/addons/crowdrender/src/py_3_7/serv_int_start.py -- -ct "$token" -t "server_int_proc"
+	/usr/local/blender/blender -b -noaudio --python /root/.config/blender/2.83/scripts/addons/crowdrender/src/py_3_7/serv_int_start.py -- -p "$persistent" -ct "$token" -t "server_int_proc" -ak "$machine_uuid"
 }
 
 

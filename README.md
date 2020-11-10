@@ -34,11 +34,14 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 - `--net=host` this sets the image to run in the `host`-network and allows the application to open the ports on its own
   
-  - (alternatively you could forward the default ports `9000`-`9025`)
+  - (alternatively you can forward the default ports `9000`-`9025`)
 
 #### Optional Parameters:
 
 - `-e CR_VERSION=<cr_version>` (note: `<` and `>` are **not** part of the version string)
+- `-e machine_uuid`: if you want to give the container a specific UUID; default is the one from `/proc/sys/kernel/random/uuid`
+- `-e persistent true|false`: set the container to be reigstered as a persistent node; default: `false`
+- `--hostname`: change hostname of the docker container (this is the name that will appear on the CR clients list)
 
 **(the default value is always the latest <u>free</u> version of CrowdRender)**
 
@@ -112,13 +115,16 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/d
 
 - `--net=host` this sets the image to run in the `host`-network and allows the application to open the ports on its own
   
-  - (alternatively you could forward the default ports `9000`-`9025`)
+  - (alternatively you can forward the default ports `9000`-`9025`)
 
 - `--gpus all` this enables the passthrough to the GPU(s)
 
 #### Optional Parameters:
 
 - `-e CR_VERSION=<cr_version>` (note: `<` and `>` are **not** part of the version string)
+- `-e machine_uuid`: if you want to give the container a specific UUID; default is the one from `/proc/sys/kernel/random/uuid`
+- `-e persistent true|false`: set the container to be reigstered as a persistent node; default: `false`
+- `--hostname`: change hostname of the docker container (this is the name that will appear on the CR clients list)
 
 ## Extra Bits
 
