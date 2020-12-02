@@ -1,4 +1,4 @@
-FROM zocker160/blender:2.91
+FROM zocker160/blender:latest
 
 MAINTAINER zocker-160
 
