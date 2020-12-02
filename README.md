@@ -6,6 +6,7 @@
 
 - `bl_2.83`, `latest`, `nvidia` *(Blender 2.83 LTS)*
 - `bl_2.79`, `bl_2.79_cu_10.1` *(Blender 2.79b)*
+- `beta`, `nvidia-beta` *(Blender 2.91)*
 
 ## Instructions for CPU
 
