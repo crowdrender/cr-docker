@@ -1,4 +1,4 @@
-name: Dockerimage latest nvidia
+name: Dockerimage beta nvidia
 
 on:
   push:
