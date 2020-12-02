@@ -20,6 +20,5 @@ jobs:
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
       run: |  
         docker login -u $HUB_NAME -p $HUB_KEY
-        docker build . --file Dockerfile.cuda10 --tag zocker160/blender-crowdrender:nvidia
-        docker tag zocker160/blender-crowdrender:nvidia zocker160/blender-crowdrender:bl_2.83_cu_10
+        docker build . --file Dockerfile.cuda10 --tag zocker160/blender-crowdrender:nvidia-beta
         docker push zocker160/blender-crowdrender
