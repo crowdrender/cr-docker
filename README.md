@@ -49,6 +49,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 | Docker tag          | Blender version | CR_VERSION           | CrowdRender version |
 |:-------------------:|:---------------:|:--------------------:|:-------------------:|
+| `beta`              | `2.91`          | `cr_029_bl280`       | `0.2.9`             |
 | `bl_2.83`, `latest` | `2.83 LTS`      | `cr_024_bl280`       | `0.2.4`             |
 |                     |                 | `cr_023_bl280`       | `0.2.3`             |
 |                     |                 | `cr_022_bl280`       | `0.2.2`             |
@@ -81,6 +82,7 @@ An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacent
 
 | Docker tag                | Blender  | CUDA |
 |:-------------------------:|:--------:|:----:|
+| `nvidia-beta`             | 2.91     | 10.2 |
 | `bl_2.83_cu_10`, `nvidia` | 2.83 LTS | 10.2 |
 | `bl_2.82_cu_10`           | 2.82a    | 10.2 |
 | `bl_2.81_cu_10`           | 2.81a    | 10.2 |
