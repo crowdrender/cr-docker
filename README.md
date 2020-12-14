@@ -89,7 +89,6 @@ An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacent
 | `bl_2.81_cu_10`           | 2.81a    | 10.2 |
 | `bl_2.79_cu_10.1`         | 2.79b    | 10.1 |
 | `bl_2.79_cu_9.2`          | 2.79b    | 9.2  |
-| `bl_2.79_cu_7.5`          | 2.79b    | 7.5  |
 
 ## Instructions
 
