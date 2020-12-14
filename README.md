@@ -35,7 +35,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 - `--net=host` this sets the image to run in the `host`-network and allows the application to open the ports on its own
   
-  - (alternatively you can forward the default ports `9000`-`9025`)
+  - (alternatively you can forward the default ports `9000`-`9025` for CR < 0.2.8, `9669` - `9694` for 0.2.8 and beyond)
 
 #### Optional Parameters:
 
@@ -118,7 +118,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/d
 
 - `--net=host` this sets the image to run in the `host`-network and allows the application to open the ports on its own
   
-  - (alternatively you can forward the default ports `9000`-`9025` for versions prior to V0.2.8, `9669` - `9694` for V0.2.8 and beyond)
+  - (alternatively you can forward the default ports `9000`-`9025` for CR < 0.2.8, `9669` - `9694` for 0.2.8 and beyond)
 
 - `--gpus all` this enables the passthrough to the GPU(s)
 
