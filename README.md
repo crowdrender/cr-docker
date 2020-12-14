@@ -51,7 +51,8 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 | Docker tag          | Blender version | CR_VERSION           | CrowdRender version |
 |:-------------------:|:---------------:|:--------------------:|:-------------------:|
 | `beta`              | `2.91`          | `cr_029_bl280`       | `0.2.9`             |
-| `bl_2.83`, `latest` | `2.83 LTS`      | `cr_024_bl280`       | `0.2.4`             |
+| `bl_2.83`, `latest` | `2.83 LTS`      | `cr_025_bl280`       | `0.2.5`             |
+|                     |                 | `cr_024_bl280`       | `0.2.4`             |
 |                     |                 | `cr_023_bl280`       | `0.2.3`             |
 |                     |                 | `cr_022_bl280`       | `0.2.2`             |
 |                     |                 | `cr_021_bl280`       | `0.2.1`             |
@@ -62,7 +63,8 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 |                     |                 | `cr_016_bl280_b`     | `0.1.6b`            |
 |                     |                 | `cr_016_bl280_c`     | `0.1.6c`            |
 | `bl_2.82`           | `2.82a`         | same as 2.83         | --                  |
-| `bl_2.79`           | `2.79b`         | `cr_024_bl279`       | `0.2.4`             |
+| `bl_2.79`           | `2.79b`         | `cr_025_bl279`       | `0.2.5`             |
+|                     |                 | `cr_024_bl279`       | `0.2.4`             |
 |                     |                 | `cr_023_bl280`       | `0.2.3`             |
 |                     |                 | `cr_022_bl279`       | `0.2.2`             |
 |                     |                 | `cr_021_bl279`       | `0.2.1`             |
