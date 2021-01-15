@@ -45,7 +45,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 - `-e persistent true|false`: set the container to be reigstered as a persistent node; default: `false`
 - `--hostname`: change hostname of the docker container (this is the name that will appear on the CR clients list)
 
-**IMPORTANT:** the latest free CR version is `0.2.5`, <u>everything above is only available for supporters!</u>
+**IMPORTANT:** the latest free CR version is `0.2.5`, ***everything above is only available for supporters!***
 
 ## Version Table
 
@@ -82,7 +82,7 @@ In order to make this image work, you need Docker >= 19.03 and the latest [NVIDI
 
 An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-ubuntu-and-debian).
 
-**IMPORTANT:** the latest free CR version is `0.2.5`, <u>everything above is only available for supporters!</u>
+**IMPORTANT:** the latest free CR version is `0.2.5`, ***everything above is only available for supporters!***
 
 ### Version Table
 
