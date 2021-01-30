@@ -51,7 +51,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 | Docker tag          | Blender version | CR_VERSION           | CrowdRender version              |
 |:-------------------:|:---------------:|:--------------------:|:--------------------------------:|
-| `beta`              | `2.91`          | `cr_029_bl280`       | `0.2.9`                          |
+| `beta`              | `2.91`          | `latest`             | latest available for the account |
 | `bl_2.83`, `latest` | `2.83 LTS`      | `latest`             | latest available for the account |
 |                     |                 | `cr_026_bl280`       | `0.2.6`                          |
 |                     |                 | `cr_025_bl280`       | `0.2.5`                          |
