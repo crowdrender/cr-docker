@@ -12,4 +12,10 @@ if test -z $token; then
 fi
 
 # use the token in order to download the latest version of CR
-curl -# -H "Authorization: Bearer $token" -X GET https://discovery.crowd-render.com/api/v0/download-addon/$CR_VERSION.zip -o $CR_VERSION.zip
+if [ $CR_VERSION = "latest" ]; then
+	echo "downloading latest CR version!"
+	curl -# -H "Authorization: Bearer $token" -X GET https://discovery.crowd-render.com/api/v0/download-addon/$CR_VERSION -o $CR_VERSION.zip
+else
+	echo "downloading CR version: $CR_VERSION!"
+	curl -# -H "Authorization: Bearer $token" -X GET https://discovery.crowd-render.com/api/v0/download-addon/$CR_VERSION.zip -o $CR_VERSION.zip
+fi
