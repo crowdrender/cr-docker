@@ -63,7 +63,6 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 |                     |                 | `cr_016_bl280`       | `0.1.6`             |
 |                     |                 | `cr_016_bl280_b`     | `0.1.6b`            |
 |                     |                 | `cr_016_bl280_c`     | `0.1.6c`            |
-| `bl_2.82`           | `2.82a`         | same as 2.83         | --                  |
 | `bl_2.79`           | `2.79b`         | `cr_025_bl279`       | `0.2.5`             |
 |                     |                 | `cr_024_bl279`       | `0.2.4`             |
 |                     |                 | `cr_023_bl280`       | `0.2.3`             |
@@ -90,7 +89,6 @@ An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacent
 |:-------------------------:|:--------:|:----:|
 | `nvidia-beta`             | 2.91     | 10.2 |
 | `bl_2.83_cu_10`, `nvidia` | 2.83 LTS | 10.2 |
-| `bl_2.82_cu_10`           | 2.82a    | 10.2 |
 | `bl_2.79_cu_10.1`         | 2.79b    | 10.1 |
 | `bl_2.79_cu_9.2`          | 2.79b    | 9.2  |
 
