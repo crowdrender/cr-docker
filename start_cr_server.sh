@@ -1,5 +1,5 @@
 #! /bin/bash
-# by zocker1600 2019 - 2020
+# by zocker1600 2019 - 2021
 
 download_cr() {
 	#check if all ENV variables are set
