@@ -40,7 +40,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 #### Optional Parameters:
 
-- `-e CR_VERSION=<cr_version>` (note: `<` and `>` are **not** part of the version string)
+- `-e CR_VERSION`: the version string of the CR addon (used for downloading); default: `latest`
 - `-e machine_uuid`: if you want to give the container a specific UUID; default is the one from `/proc/sys/kernel/random/uuid`
 - `-e persistent true|false`: set the container to be reigstered as a persistent node; default: `false`
 - `--hostname`: change hostname of the docker container (this is the name that will appear on the CR clients list)
@@ -49,32 +49,33 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 ## Version Table
 
-| Docker tag          | Blender version | CR_VERSION           | CrowdRender version |
-|:-------------------:|:---------------:|:--------------------:|:-------------------:|
-| `beta`              | `2.91`          | `cr_029_bl280`       | `0.2.9`             |
-| `bl_2.83`, `latest` | `2.83 LTS`      | `cr_026_bl280`       | `0.2.6`             |
-|                     |                 | `cr_025_bl280`       | `0.2.5`             |
-|                     |                 | `cr_024_bl280`       | `0.2.4`             |
-|                     |                 | `cr_023_bl280`       | `0.2.3`             |
-|                     |                 | `cr_022_bl280`       | `0.2.2`             |
-|                     |                 | `cr_021_bl280`       | `0.2.1`             |
-|                     |                 | `cr_020_bl280`       | `0.2.0`             |
-|                     |                 | `cr_018_bl280`       | `0.1.8`             |
-|                     |                 | `cr_017_bl280`       | `0.1.7`             |
-|                     |                 | `cr_016_bl280`       | `0.1.6`             |
-|                     |                 | `cr_016_bl280_b`     | `0.1.6b`            |
-|                     |                 | `cr_016_bl280_c`     | `0.1.6c`            |
-| `bl_2.79`           | `2.79b`         | `cr_025_bl279`       | `0.2.5`             |
-|                     |                 | `cr_024_bl279`       | `0.2.4`             |
-|                     |                 | `cr_023_bl280`       | `0.2.3`             |
-|                     |                 | `cr_022_bl279`       | `0.2.2`             |
-|                     |                 | `cr_021_bl279`       | `0.2.1`             |
-|                     |                 | `cr_020_bl279`       | `0.2.0`             |
-|                     |                 | `cr_018_bl279`       | `0.1.8`             |
-|                     |                 | `cr_017`             | `0.1.7`             |
-|                     |                 | `cr_016`             | `0.1.6`             |
-|                     |                 | `cr_015`             | `0.1.5`             |
-|                     |                 | `cr_014_bl279_Patch` | `0.1.4`             |
+| Docker tag          | Blender version | CR_VERSION           | CrowdRender version              |
+|:-------------------:|:---------------:|:--------------------:|:--------------------------------:|
+| `beta`              | `2.91`          | `cr_029_bl280`       | `0.2.9`                          |
+| `bl_2.83`, `latest` | `2.83 LTS`      | `latest`             | latest available for the account |
+|                     |                 | `cr_026_bl280`       | `0.2.6`                          |
+|                     |                 | `cr_025_bl280`       | `0.2.5`                          |
+|                     |                 | `cr_024_bl280`       | `0.2.4`                          |
+|                     |                 | `cr_023_bl280`       | `0.2.3`                          |
+|                     |                 | `cr_022_bl280`       | `0.2.2`                          |
+|                     |                 | `cr_021_bl280`       | `0.2.1`                          |
+|                     |                 | `cr_020_bl280`       | `0.2.0`                          |
+|                     |                 | `cr_018_bl280`       | `0.1.8`                          |
+|                     |                 | `cr_017_bl280`       | `0.1.7`                          |
+|                     |                 | `cr_016_bl280`       | `0.1.6`                          |
+|                     |                 | `cr_016_bl280_b`     | `0.1.6b`                         |
+|                     |                 | `cr_016_bl280_c`     | `0.1.6c`                         |
+| `bl_2.79`           | `2.79b`         | `cr_025_bl279`       | `0.2.5`                          |
+|                     |                 | `cr_024_bl279`       | `0.2.4`                          |
+|                     |                 | `cr_023_bl280`       | `0.2.3`                          |
+|                     |                 | `cr_022_bl279`       | `0.2.2`                          |
+|                     |                 | `cr_021_bl279`       | `0.2.1`                          |
+|                     |                 | `cr_020_bl279`       | `0.2.0`                          |
+|                     |                 | `cr_018_bl279`       | `0.1.8`                          |
+|                     |                 | `cr_017`             | `0.1.7`                          |
+|                     |                 | `cr_016`             | `0.1.6`                          |
+|                     |                 | `cr_015`             | `0.1.5`                          |
+|                     |                 | `cr_014_bl279_Patch` | `0.1.4`                          |
 
 ## Instructions for GPU (nvidia)
 
@@ -127,7 +128,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/d
 
 #### Optional Parameters:
 
-- `-e CR_VERSION=<cr_version>` (note: `<` and `>` are **not** part of the version string)
+- `-e CR_VERSION`: the version string of the CR addon (used for downloading); default: `latest`
 - `-e machine_uuid`: if you want to give the container a specific UUID; default is the one from `/proc/sys/kernel/random/uuid`
 - `-e persistent true|false`: set the container to be reigstered as a persistent node; default: `false`
 - `--hostname`: change hostname of the docker container (this is the name that will appear on the CR clients list)
