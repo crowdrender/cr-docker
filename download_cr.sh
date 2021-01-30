@@ -8,7 +8,7 @@ echo "your download token is: $token"
 
 if test -z $token; then
 	echo "ERROR: you need to specify a login token in order to download the latest version!"
-	exit
+	exit 1
 fi
 
 # use the token in order to download the latest version of CR
