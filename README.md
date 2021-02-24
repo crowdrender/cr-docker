@@ -53,6 +53,8 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 |:-------------------:|:---------------:|:--------------------:|:--------------------------------:|
 | `beta`              | `2.91`          | `latest`             | latest available for the account |
 | `bl_2.83`, `latest` | `2.83 LTS`      | `latest`             | latest available for the account |
+|                     |                 | `cr_028_bl280`       | `0.2.8`                          |
+|                     |                 | `cr_027_bl280`       | `0.2.7`                          |
 |                     |                 | `cr_026_bl280`       | `0.2.6`                          |
 |                     |                 | `cr_025_bl280`       | `0.2.5`                          |
 |                     |                 | `cr_024_bl280`       | `0.2.4`                          |
