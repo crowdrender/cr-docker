@@ -1,4 +1,4 @@
-name: Dockerimage latest
+name: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjF0YWRsa2xpbTVkNDgiLCJpYXQiOjE2MTQxMjEzMDR9.UhbwygAYeZvBLzqvnLGchTGqq_MgbzXnfSBCIGl7fvU
 
 on:
   push:
