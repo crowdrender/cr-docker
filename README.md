@@ -6,7 +6,7 @@
 
 - `bl_2.83`, `latest`, `nvidia` *(Blender 2.83 LTS)*
 - `bl_2.79`, `bl_2.79_cu_10.1` *(Blender 2.79b)*
-- `beta`, `nvidia-beta` *(Blender 2.91)*
+- `beta`, `nvidia-beta` *(Blender 2.92)*
 
 ## Instructions for CPU
 
@@ -51,7 +51,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 | Docker tag          | Blender version | CR_VERSION           | CrowdRender version              |
 |:-------------------:|:---------------:|:--------------------:|:--------------------------------:|
-| `beta`              | `2.91`          | `latest`             | latest available for the account |
+| `beta`              | `2.92`          | `latest`             | latest available for the account |
 | `bl_2.83`, `latest` | `2.83 LTS`      | `latest`             | latest available for the account |
 |                     |                 | `cr_028_bl280`       | `0.2.8`                          |
 |                     |                 | `cr_027_bl280`       | `0.2.7`                          |
@@ -91,7 +91,7 @@ An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacent
 
 | Docker tag                | Blender  | CUDA |
 |:-------------------------:|:--------:|:----:|
-| `nvidia-beta`             | 2.91     | 10.2 |
+| `nvidia-beta`             | 2.92     | 10.2 |
 | `bl_2.83_cu_10`, `nvidia` | 2.83 LTS | 10.2 |
 | `bl_2.79_cu_10.1`         | 2.79b    | 10.1 |
 | `bl_2.79_cu_9.2`          | 2.79b    | 9.2  |
