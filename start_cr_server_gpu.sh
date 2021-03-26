@@ -1,7 +1,7 @@
 #! /bin/bash
 # by zocker1600 2019 - 2021
 
-download_cr (){
+download_cr() {
 	# check if all ENV variables are set
 #	if [ -z "$username" ] || [ -z "$password" ];then
 #		echo "you need to specify username and password!"
