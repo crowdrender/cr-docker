@@ -41,6 +41,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 #### Optional Parameters:
 
 - `-e CR_VERSION`: the version string of the CR addon (used for downloading); default: `latest`
+- `-e local true|false`: enable LOCAL rendering mode (if you want to render in a local network); default: `false`
 - `-e machine_uuid`: if you want to give the container a specific UUID; default is the one from `/proc/sys/kernel/random/uuid`
 - `-e persistent true|false`: set the container to be reigstered as a persistent node; default: `false`
 - `--hostname`: change hostname of the docker container (this is the name that will appear on the CR clients list)
@@ -131,6 +132,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/d
 #### Optional Parameters:
 
 - `-e CR_VERSION`: the version string of the CR addon (used for downloading); default: `latest`
+- `-e local true|false`: enable LOCAL rendering mode (if you want to render in a local network); default: `false`
 - `-e machine_uuid`: if you want to give the container a specific UUID; default is the one from `/proc/sys/kernel/random/uuid`
 - `-e persistent true|false`: set the container to be reigstered as a persistent node; default: `false`
 - `--hostname`: change hostname of the docker container (this is the name that will appear on the CR clients list)
