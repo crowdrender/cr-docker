@@ -4,6 +4,7 @@ MAINTAINER zocker-160
 
 ENV CR_VERSION latest
 ENV persistent "false"
+ENV local "false"
 
 RUN apt-get update && apt-get install -y jq
 
