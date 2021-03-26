@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2.0.0
+    - uses: actions/checkout@v2.3.4
       with:
         branch: master
     - name: Build the Docker image
@@ -19,7 +19,7 @@ jobs:
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
       run: |  
         docker login -u $HUB_NAME -p $HUB_KEY
-        docker build . --file Dockerfile --tag zocker160/blender-crowdrender:latest
+        docker build . --pull --no-cache --file Dockerfile --tag zocker160/blender-crowdrender:latest
         docker tag zocker160/blender-crowdrender:latest zocker160/blender-crowdrender:bl_2.83
         docker push zocker160/blender-crowdrender:latest
         docker push zocker160/blender-crowdrender:bl_2.83
@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2.0.0
+    - uses: actions/checkout@v2.3.4
       with:
         branch: master
     - name: Build the Docker image
@@ -37,7 +37,7 @@ jobs:
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
       run: |  
         docker login -u $HUB_NAME -p $HUB_KEY
-        docker build . --file Dockerfile.cuda10 --tag zocker160/blender-crowdrender:nvidia
+        docker build . --pull --no-cache --file Dockerfile.cuda10 --tag zocker160/blender-crowdrender:nvidia
         docker tag zocker160/blender-crowdrender:nvidia zocker160/blender-crowdrender:bl_2.83_cu_10
         docker push zocker160/blender-crowdrender:nvidia
         docker push zocker160/blender-crowdrender:bl_2.83_cu_10
