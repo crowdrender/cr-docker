@@ -1,4 +1,4 @@
-FROM zocker160/blender:cuda10
+FROM zocker160/blender:2.93-LTS-cuda10
 
 MAINTAINER zocker-160
 
