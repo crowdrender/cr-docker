@@ -36,5 +36,5 @@ jobs:
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
       run: |  
         docker login -u $HUB_NAME -p $HUB_KEY
-        docker build . --pull --no-cache --f Dockerfile.cuda10 -t zocker160/blender-crowdrender:nvidia-beta
+        docker build . --pull --no-cache -f Dockerfile.cuda10 -t zocker160/blender-crowdrender:nvidia-beta
         docker push zocker160/blender-crowdrender:nvidia-beta
