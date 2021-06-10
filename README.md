@@ -49,7 +49,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 - `-e persistent true|false`: set the container to be reigstered as a persistent node; default: `false`
 - `--hostname`: change hostname of the docker container (this is the name that will appear on the CR clients list)
 
-**IMPORTANT:** the latest free CR version is `0.2.8`, ***everything above is only available for supporters of our dev fund, [learn more here](https://www.crowd-render.com/crowdfunding)!***
+**IMPORTANT:** the latest free CR version is `0.2.10`, ***everything above is only available for supporters of our dev fund, [learn more here](https://www.crowd-render.com/crowdfunding)!***
 
 ## Version Table
 
