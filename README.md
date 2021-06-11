@@ -91,7 +91,7 @@ In order to make this image work, you need Docker >= 19.03 and the latest [NVIDI
 
 An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-ubuntu-and-debian).
 
-**IMPORTANT:** the latest free CR version is `0.2.8`, ***everything above is only available for supporters of our dev fund, [learn more here](https://www.crowd-render.com/crowdfunding)!***
+**IMPORTANT:** the latest free CR version is `0.2.10`, ***everything above is only available for supporters of our dev fund, [learn more here](https://www.crowd-render.com/crowdfunding)!***
 
 ### Version Table
 
