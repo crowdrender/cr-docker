@@ -41,3 +41,21 @@ jobs:
         docker tag zocker160/blender-crowdrender:nvidia zocker160/blender-crowdrender:bl_2.83_cu_10
         docker push zocker160/blender-crowdrender:nvidia
         docker push zocker160/blender-crowdrender:bl_2.83_cu_10
+
+  nvidia11:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: 'master'
+    - name: Build the Docker image
+      env:
+        HUB_NAME: ${{ secrets.DOCKER_NAME }}
+        HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
+      run: |  
+        docker login -u $HUB_NAME -p $HUB_KEY
+        docker build . --pull --no-cache --file Dockerfile.cuda11 --tag zocker160/blender-crowdrender:nvidia_11
+        docker tag zocker160/blender-crowdrender:nvidia_11 zocker160/blender-crowdrender:bl_2.83_cu_11
+        docker push zocker160/blender-crowdrender:nvidia_11
+        docker push zocker160/blender-crowdrender:bl_2.83_cu_11
