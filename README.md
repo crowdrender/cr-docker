@@ -98,7 +98,8 @@ An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacent
 | Docker tag                | Blender  | CUDA |
 |:-------------------------:|:--------:|:----:|
 | `nvidia-beta`             | 2.93 LTS | 10.2 |
-| `bl_2.83_cu_10`, `nvidia` | 2.83 LTS | 10.2 |
+| `bl_2.83_cu_11`, `nvidia` | 2.83 LTS | 11.0 |
+| `bl_2.83_cu_10`           | 2.83 LTS | 10.2 |
 | `bl_2.79_cu_10.1`         | 2.79b    | 10.1 |
 | `bl_2.79_cu_9.2`          | 2.79b    | 9.2  |
 
