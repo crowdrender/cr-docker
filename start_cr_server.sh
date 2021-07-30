@@ -36,10 +36,10 @@ start_server() {
 	
 	if [ $local == "true" ]; then
 		echo "starting crowdrender server in LOCAL MODE....................."
-		/usr/local/blender/blender -b -noaudio --python /root/.config/blender/$BLENDER_VERSION/scripts/addons/crowdrender/src/$BLENDER_PYV/serv_int_start.py -- -t "server_int_proc"
+		/usr/local/blender/blender -b -noaudio --python /root/.config/blender/$BLENDER_VERSION/scripts/addons/crowdrender/src/cr/serv_int_start.py -- -t "server_int_proc"
 	else
 		echo "starting crowdrender server in CLOUD MODE....................."
-		/usr/local/blender/blender -b -noaudio --python /root/.config/blender/$BLENDER_VERSION/scripts/addons/crowdrender/src/$BLENDER_PYV/serv_int_start.py -- -p "$persistent" -ct "$token" -t "server_int_proc" -ak "$machine_uuid"
+		/usr/local/blender/blender -b -noaudio --python /root/.config/blender/$BLENDER_VERSION/scripts/addons/crowdrender/src/cr/serv_int_start.py -- -p "$persistent" -ct "$token" -t "server_int_proc" -ak "$machine_uuid"
 	fi
 }
 
