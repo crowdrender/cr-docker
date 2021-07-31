@@ -29,6 +29,11 @@ then
 fi
 
 start_server() {
+	if [ "$CR_VERSION" == "latest" ] || [ "$CR_VERSION" == "cr_032_bl280" ]; then
+        echo "using ugly workaround for latest CR version..."
+        BLENDER_PYV="cr"
+    fi
+
 	# start the CR server
 	if [ $local == "true" ]; then
 		echo "starting crowdrender server in LOCAL MODE....................."
