@@ -2,13 +2,13 @@
 # made by zocker1600 (c) Crowdrender 2019 - 2021
 
 echo "using token for login...."
-
-# echo token for debugging
-echo "your download token is: $token"
-
+    
+# echo token status
 if test -z $token; then
 	echo "ERROR: you need to specify a login token in order to download the latest version!"
-	exit
+	exit 1
+else 
+    echo "download token given with length of ${#token}"
 fi
 
 # use the token in order to download the latest version of CR
