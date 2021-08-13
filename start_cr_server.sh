@@ -34,12 +34,26 @@ start_server() {
 		echo "INFO: running in CPU only mode!"
 	fi
 	
+	ROOT_PATH="/root/.config/blender/$BLENDER_VERSION/scripts/addons/crowdrender"
+	
+    if test -f "$ROOT_PATH/src/cr/serv_int_start.py"; then
+        echo "using workaround for source CR version..."
+        BLENDER_PYV="cr"
+    fi
+
+    CR_PATH="src/$BLENDER_PYV"
+    
+    if test -f "$ROOT_PATH/cr_source/core/serv_int_start.py"; then
+        echo "replacing CR_PATH for CR >= 0.4.0..."
+        CR_PATH="cr_source/core"
+    fi
+    
 	if [ $local == "true" ]; then
 		echo "starting crowdrender server in LOCAL MODE....................."
-		/usr/local/blender/blender -b -noaudio --python /root/.config/blender/$BLENDER_VERSION/scripts/addons/crowdrender/src/cr/serv_int_start.py -- -t "server_int_proc"
+		/usr/local/blender/blender -b -noaudio --python $ROOT_PATH/$CR_PATH/serv_int_start.py -- -t "server_int_proc"
 	else
 		echo "starting crowdrender server in CLOUD MODE....................."
-		/usr/local/blender/blender -b -noaudio --python /root/.config/blender/$BLENDER_VERSION/scripts/addons/crowdrender/src/cr/serv_int_start.py -- -p "$persistent" -ct "$token" -t "server_int_proc" -ak "$machine_uuid"
+		/usr/local/blender/blender -b -noaudio --python $ROOT_PATH/$CR_PATH/serv_int_start.py -- -p "$persistent" -ct "$token" -t "server_int_proc" -ak "$machine_uuid"
 	fi
 }
 
