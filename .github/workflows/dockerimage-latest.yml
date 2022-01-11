@@ -20,9 +20,9 @@ jobs:
       run: |  
         docker login -u $HUB_NAME -p $HUB_KEY
         docker build . --pull --no-cache --file Dockerfile --tag zocker160/blender-crowdrender:latest
-        docker tag zocker160/blender-crowdrender:latest zocker160/blender-crowdrender:bl_2.83
+        docker tag zocker160/blender-crowdrender:latest zocker160/blender-crowdrender:bl_2.93
         docker push zocker160/blender-crowdrender:latest
-        docker push zocker160/blender-crowdrender:bl_2.83
+        docker push zocker160/blender-crowdrender:bl_2.93
 
   nvidia10:
     runs-on: ubuntu-latest
@@ -54,6 +54,6 @@ jobs:
       run: |  
         docker login -u $HUB_NAME -p $HUB_KEY
         docker build . --pull --no-cache --file Dockerfile.cuda11 --tag zocker160/blender-crowdrender:nvidia
-        docker tag zocker160/blender-crowdrender:nvidia zocker160/blender-crowdrender:bl_2.83_cu_11
+        docker tag zocker160/blender-crowdrender:nvidia zocker160/blender-crowdrender:bl_2.93_cu_11
         docker push zocker160/blender-crowdrender:nvidia
-        docker push zocker160/blender-crowdrender:bl_2.83_cu_11
+        docker push zocker160/blender-crowdrender:bl_2.93_cu_11

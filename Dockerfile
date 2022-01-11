@@ -1,4 +1,4 @@
-FROM zocker160/blender:2.83-LTS
+FROM zocker160/blender:2.93-LTS
 
 MAINTAINER zocker-160
 

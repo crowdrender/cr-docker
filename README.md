@@ -4,7 +4,7 @@
 
 ### Most Important Tags
 
-- `bl_2.83`, `latest`, `nvidia` *(Blender 2.83 LTS)*
+- `bl_2.93`, `latest`, `nvidia` *(Blender 2.93 LTS)*
 - `bl_2.79`, `bl_2.79_cu_10.1` *(Blender 2.79b)*
 - `beta`, `nvidia-beta` *(Blender 2.93 LTS)*
 
@@ -56,7 +56,7 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 | Docker tag          | Blender version | CR_VERSION           | CrowdRender version              |
 |:-------------------:|:---------------:|:--------------------:|:--------------------------------:|
 | `beta`              | `2.93 LTS`      | `latest`             | latest available for the account |
-| `bl_2.83`, `latest` | `2.83 LTS`      | `latest`             | latest available for the account |
+| `bl_2.93`, `latest` | `2.93 LTS`      | `latest`             | latest available for the account |
 |                     |                 | `cr_030_bl280`       | `0.3.0`                          |
 |                     |                 | `cr_0210_bl280`      | `0.2.10`                         |
 | `bl_2.79`           | `2.79b`         | `cr_025_bl279`       | `0.2.5`                          |
@@ -77,14 +77,15 @@ In order to make this image work, you need Docker >= 19.03 and the latest [NVIDI
 
 An official guide by Nvidia can be found [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-ubuntu-and-debian).
 
-**IMPORTANT:** the latest free CR version is `0.2.10`, ***everything above is only available for supporters of our dev fund, [learn more here](https://www.crowd-render.com/crowdfunding)!***
+**IMPORTANT:** the latest free CR version is `0.3.0`, ***everything above is only available for supporters of our dev fund, [learn more here](https://www.crowd-render.com/crowdfunding)!***
 
 ### Version Table
 
 | Docker tag                | Blender  | CUDA |
 |:-------------------------:|:--------:|:----:|
 | `nvidia-beta`             | 2.93 LTS | 11.0 |
-| `bl_2.83_cu_11`, `nvidia` | 2.83 LTS | 11.0 |
+| `bl_2.93_cu_11`, `nvidia` | 2.93 LTS | 11.0 |
+| `bl_2.83_cu_11`           | 2.83 LTS | 11.0 |
 | `bl_2.83_cu_10`           | 2.83 LTS | 10.2 |
 | `bl_2.79_cu_10.1`         | 2.79b    | 10.1 |
 | `bl_2.79_cu_9.2`          | 2.79b    | 9.2  |
