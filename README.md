@@ -6,7 +6,7 @@
 
 - `bl_2.93`, `latest`, `nvidia` *(Blender 2.93 LTS)*
 - `bl_2.79`, `bl_2.79_cu_10.1` *(Blender 2.79b)*
-- `beta`, `nvidia-beta` *(Blender 2.93 LTS)*
+- `beta`, `nvidia-beta` *(Blender 3.0)*
 
 [![Dockerimage beta](https://github.com/crowdrender/cr-docker/actions/workflows/dockerimage-beta.yml/badge.svg)](https://github.com/crowdrender/cr-docker/actions/workflows/dockerimage-beta.yml)
 [![Dockerimage latest](https://github.com/crowdrender/cr-docker/actions/workflows/dockerimage-latest.yml/badge.svg)](https://github.com/crowdrender/cr-docker/actions/workflows/dockerimage-latest.yml)
@@ -55,8 +55,9 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 | Docker tag          | Blender version | CR_VERSION           | CrowdRender version              |
 |:-------------------:|:---------------:|:--------------------:|:--------------------------------:|
-| `beta`              | `2.93 LTS`      | `latest`             | latest available for the account |
+| `beta`              | `3.0`           | `latest`             | latest available for the account |
 | `bl_2.93`, `latest` | `2.93 LTS`      | `latest`             | latest available for the account |
+| `bl_2.83`           | `2.83 LTS`      | `latest`             | latest available for the account |
 |                     |                 | `cr_030_bl280`       | `0.3.0`                          |
 |                     |                 | `cr_0210_bl280`      | `0.2.10`                         |
 | `bl_2.79`           | `2.79b`         | `cr_025_bl279`       | `0.2.5`                          |
