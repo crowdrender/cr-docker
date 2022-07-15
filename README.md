@@ -49,7 +49,10 @@ crowdrender/blender-crowdrender:latest
 - `--net=host` this sets the image to run in the `host`-network and allows the application to open the ports on its own 
   
   - (alternatively you can forward the default ports with the `-p` option instead of `--net=host`, ports are `9000`-`9025` for CR < `0.2.8`, `9669` - `9694` for `0.2.8` and beyond)
-  - (IMPORTANT - **Docker Desktop** does NOT work if you use `--net=host`, please us the `-p` option instead, for more info see docker documentation [here](https://docs.docker.com/engine/reference/commandline/run/#publish-or-expose-port--p---expose))
+
+**IMPORTANT**:
+
+Docker Desktop and Docker on Windows do *not* support `--net=host`, please use the `-p` option instead, for more info see [the docker documentation](https://docs.docker.com/engine/reference/commandline/run/#publish-or-expose-port--p---expose).
 
 #### Optional Parameters:
 
