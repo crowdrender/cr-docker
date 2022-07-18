@@ -1,59 +1,60 @@
-name: Dockerimage latest
+name: Dockerimage Builder
 
 on:
   push:
     branches: 
       - master
+      - refactor
+  workflow_dispatch:
 
 jobs:
-  CPU:
+  latest:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        ref: 'master'
     - name: Build the Docker image
       env:
         HUB_NAME: ${{ secrets.DOCKER_NAME }}
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
-      run: |  
+      run: |
         docker login -u $HUB_NAME -p $HUB_KEY
-        docker build . --pull --no-cache --file Dockerfile --tag zocker160/blender-crowdrender:latest
-        docker tag zocker160/blender-crowdrender:latest zocker160/blender-crowdrender:bl_2.93
-        docker push zocker160/blender-crowdrender:latest
-        docker push zocker160/blender-crowdrender:bl_2.93
+        
+        docker build . --pull --no-cache --file Dockerfile --tag crowdrender/blender-crowdrender:latest
+        
+        docker tag crowdrender/blender-crowdrender:latest crowdrender/blender-crowdrender:bl_3.2
+        
+        docker push crowdrender/blender-crowdrender:latest
+        docker push crowdrender/blender-crowdrender:bl_3.2
 
-  nvidia10:
+  LTSone:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        ref: 'master'
     - name: Build the Docker image
       env:
         HUB_NAME: ${{ secrets.DOCKER_NAME }}
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
-      run: |  
+      run: |
         docker login -u $HUB_NAME -p $HUB_KEY
-        docker build . --pull --no-cache --file Dockerfile.cuda10 --tag zocker160/blender-crowdrender:bl_2.83_cu_10
-        docker push zocker160/blender-crowdrender:bl_2.83_cu_10
+        
+        docker build . --pull --no-cache --file Dockerfile.293LTS --tag crowdrender/blender-crowdrender:bl_2.93
+        
+        docker push crowdrender/blender-crowdrender:bl_2.93
 
-  nvidia11:
+  LTStwo:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        ref: 'master'
     - name: Build the Docker image
       env:
         HUB_NAME: ${{ secrets.DOCKER_NAME }}
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
-      run: |  
+      run: |
         docker login -u $HUB_NAME -p $HUB_KEY
-        docker build . --pull --no-cache --file Dockerfile.cuda11 --tag zocker160/blender-crowdrender:nvidia
-        docker tag zocker160/blender-crowdrender:nvidia zocker160/blender-crowdrender:bl_2.93_cu_11
-        docker push zocker160/blender-crowdrender:nvidia
-        docker push zocker160/blender-crowdrender:bl_2.93_cu_11
+        
+        docker build . --pull --no-cache --file Dockerfile.283LTS --tag crowdrender/blender-crowdrender:bl_2.83
+        
+        docker push crowdrender/blender-crowdrender:bl_2.83
