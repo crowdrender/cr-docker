@@ -4,6 +4,10 @@
 
 - `latest` | `bl_3.2` *(Blender 3.2)*
 - `bl_2.93` *(Blender 2.93 LTS)*
+
+### EOL Tags
+
+- `bl_3.1` *(Blender 3.1)*
 - `bl_2.83` *(Blender 2.83 LTS)*
 
 [![Dockerimage builder](https://github.com/crowdrender/cr-docker/actions/workflows/dockerimage-latest.yml/badge.svg)](https://github.com/crowdrender/cr-docker/actions/workflows/dockerimage-latest.yml)
