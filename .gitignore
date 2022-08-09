@@ -2,3 +2,8 @@
 
 .directory
 push_readme_to_dockerhub.sh
+
+*.log
+.vscode
+
+.DS_Store
