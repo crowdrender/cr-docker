@@ -17,14 +17,15 @@ jobs:
       env:
         HUB_NAME: ${{ secrets.DOCKER_NAME }}
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
-        BLENDER_URL: https://download.blender.org/release/Blender3.2/blender-3.2.1-linux-x64.tar.xz
-        BLENDER_VERSION_STRING: "3.2"
+        BL_VERSION_SHORT: "3.2"
+        BL_VERSION_FULL: "3.2.2"
+        BLENDER_URL: https://download.blender.org/release/Blender${BL_VERSION_SHORT}/blender-${BL_VERSION_FULL}-linux-x64.tar.xz
       run: |  
         docker login -u $HUB_NAME -p $HUB_KEY
         docker build . --pull --no-cache --file Dockerfile --tag crowdrender/blender-crowdrender:latest --build-arg BLENDER_BZ2_URL="$BLENDER_URL" BL_VERSION_SHORT="${BLENDER_VERSION_STRING}"
-        docker tag crowdrender/blender-crowdrender:latest crowdrender/blender-crowdrender:bl_${BLENDER_VERSION_STRING}
+        docker tag crowdrender/blender-crowdrender:latest crowdrender/blender-crowdrender:bl_${BL_VERSION_SHORT}
         docker push crowdrender/blender-crowdrender:latest
-        docker push crowdrender/blender-crowdrender:bl_${BLENDER_VERSION_STRING}
+        docker push crowdrender/blender-crowdrender:bl_${BL_VERSION_SHORT}
 
   LTSone:
     runs-on: ubuntu-latest
