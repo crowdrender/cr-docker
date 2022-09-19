@@ -73,7 +73,7 @@ Docker Desktop and Docker on Windows do *not* support `--net=host`, please use t
 | `latest`             | latest available for the account | `2.80 - 3.2`    |
 | `cr_044_bl280`       | `0.4.4`                          | `2.80 - 3.2`    |
 | `cr_043_bl280`       | `0.4.3`                          | `2.80 - 3.2`    |
-| `cr_042_bl280`       | `0.4.2`                          | `2.80 - 3.2`    |
+| `cr_042_bl280`       | `0.4.2`                          | `2.80 - 3.0`    |
 | `cr_041_bl280`       | `0.4.1`                          | `2.80 - 2.93`   |
 | `cr_040_bl280`       | `0.4.0`                          | `2.80 - 2.93`   |
 | `cr_032_bl280`       | `0.3.2`                          | `2.80 - 2.93`   |
