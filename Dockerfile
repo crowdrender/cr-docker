@@ -11,6 +11,7 @@ RUN apt-get update 	&& apt-get install -y \
     libxi6 \
     libxrender1 \
     xz-utils \
+    nvidia-container-toolkit \
     && apt-get -y autoremove && rm -rf /var/lib/apt/lists/*
 
 # Blender variables used for specifying the blender version
@@ -40,7 +41,7 @@ ENV persistent false
 ENV BL_VERSION_SHORT ${BL_VERSION_SHORT}
 
 ENV NVIDIA_VISIBLE_DEVICES all
-ENV NVIDIA_DRIVER_CAPABILITIES compute,utility,graphics
+ENV NVIDIA_DRIVER_CAPABILITIES all
 
 WORKDIR /CR
 
