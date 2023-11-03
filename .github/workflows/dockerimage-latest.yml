@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v2
     - id: generate-url
       run: |
-        echo "BLENDER_URL=$(format('https://download.blender.org/release/Blender{0}/blender-{1}-linux-x64.tar.xz', matrix.BL_VERSION_SHORT, matrix.BL_VERSION_FULL))" >> $GITHUB_ENV
+        echo "BLENDER_URL=$(printf 'https://download.blender.org/release/Blender%s/blender-%s-linux-x64.tar.xz' ${BL_VERSION_SHORT} ${BL_VERSION_FULL})" >> $GITHUB_ENV
     - name: Build the Docker image
       env:
         HUB_NAME: ${{ secrets.DOCKER_NAME }}
@@ -38,7 +38,7 @@ jobs:
     - uses: actions/checkout@v2
     - id: generate-url
       run: |
-        echo "BLENDER_URL=$(format('https://download.blender.org/release/Blender{0}/blender-{1}-linux-x64.tar.xz', matrix.BL_VERSION_SHORT, matrix.BL_VERSION_FULL))" >> $GITHUB_ENV
+        echo "BLENDER_URL=$(printf 'https://download.blender.org/release/Blender%s/blender-%s-linux-x64.tar.xz' ${BL_VERSION_SHORT} ${BL_VERSION_FULL})" >> $GITHUB_ENV
     - name: Build the Docker image
       env:
         HUB_NAME: ${{ secrets.DOCKER_NAME }}
