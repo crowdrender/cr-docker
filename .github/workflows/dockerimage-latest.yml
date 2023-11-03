@@ -11,13 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        BL_VERSION_SHORT: ["3.6", "3.5", "3.4", "3.3"]
-        BL_VERSION_FULL: ["3.6.5", "3.5.1", "3.4.1", "3.3.12"]
+        version: [["3.6", "3.6.5"], ["3.5", "3.5.1"], ["3.4", "3.4.1"], ["3.3", "3.3.12"]]
     steps:
     - uses: actions/checkout@v2
     - id: generate-url
       run: |
-        echo "BLENDER_URL=$(printf 'https://download.blender.org/release/Blender%s/blender-%s-linux-x64.tar.xz' ${{ matrix.BL_VERSION_SHORT }} ${{ matrix.BL_VERSION_FULL }})" >> $GITHUB_ENV
+        echo "BLENDER_URL=$(printf 'https://download.blender.org/release/Blender%s/blender-%s-linux-x64.tar.xz' ${{ matrix.version[0] }} ${{ matrix.version[1] }})" >> $GITHUB_ENV
     - name: Build the Docker image
       env:
         HUB_NAME: ${{ secrets.DOCKER_NAME }}
@@ -25,15 +24,14 @@ jobs:
       run: | 
         docker login -u $HUB_NAME -p $HUB_KEY
         docker build . --pull --no-cache --file Dockerfile --tag crowdrender/blender-crowdrender:latest --build-arg BLENDER_DL_URL="${BLENDER_URL}"
-        docker tag crowdrender/blender-plugin:latest crowdrender/blender-plugin:bl_${BL_VERSION_SHORT}
-        docker push crowdrender/blender-plugin:bl_${BL_VERSION_SHORT}
+        docker tag crowdrender/blender-plugin:latest crowdrender/blender-plugin:bl_${{matrix.version[0]}}
+        docker push crowdrender/blender-plugin:bl_${{matrix.version[0]}}
 
-  build-and-push-cuda-images:
+  build-and-push-dockerdesktop-images:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        BL_VERSION_SHORT: ["3.6", "3.5", "3.4", "3.3"]
-        BL_VERSION_FULL: ["3.6.5", "3.5.1", "3.4.1", "3.3.12"]
+        version: [["3.6", "3.6.5"], ["3.5", "3.5.1"], ["3.4", "3.4.1"], ["3.3", "3.3.12"]]
     steps:
     - uses: actions/checkout@v2
     - id: generate-url
@@ -46,5 +44,5 @@ jobs:
       run: | 
         docker login -u $HUB_NAME -p $HUB_KEY
         docker build . --pull --no-cache --file Dockerfile.Cuda --tag crowdrender/blender-crowdrender:latest --build-arg BLENDER_DL_URL="${BLENDER_URL}"
-        docker tag crowdrender/blender-plugin:latest crowdrender/blender-plugin:bl_${BL_VERSION_SHORT}-DockerDesktop
-        docker push crowdrender/blender-plugin:bl_${BL_VERSION_SHORT}-DockerDesktop
+        docker tag crowdrender/blender-plugin:latest crowdrender/blender-plugin:bl_${{ matrix.version[0] }}-DockerDesktop
+        docker push crowdrender/blender-plugin:bl_${{ matrix.version[0] }}-DockerDesktop
