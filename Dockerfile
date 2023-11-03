@@ -36,7 +36,7 @@ RUN curl -SL "$BLENDER_DL_URL" -o blender.tar.xz \
 
 ENV use_local_cr false
 ENV cr_version latest
-ENV persistent "false"
+ENV persistent false
 ENV BL_VERSION_SHORT ${BL_VERSION_SHORT}
 
 ENV NVIDIA_VISIBLE_DEVICES all
