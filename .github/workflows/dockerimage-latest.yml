@@ -46,5 +46,5 @@ jobs:
       run: | 
         docker login -u $HUB_NAME -p $HUB_KEY
         docker build . --pull --no-cache --file Dockerfile.Cuda --tag crowdrender/blender-crowdrender:latest --build-arg BLENDER_DL_URL="${BLENDER_URL}"
-        docker tag crowdrender/blender-plugin:latest crowdrender/blender-plugin:bl_${BL_VERSION_SHORT}-Cuda
-        docker push crowdrender/blender-plugin:bl_${BL_VERSION_SHORT}-Cuda
+        docker tag crowdrender/blender-plugin:latest crowdrender/blender-plugin:bl_${BL_VERSION_SHORT}-DockerDesktop
+        docker push crowdrender/blender-plugin:bl_${BL_VERSION_SHORT}-DockerDesktop

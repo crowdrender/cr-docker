@@ -17,7 +17,7 @@
 
 [![Dockerimage builder](https://github.com/crowdrender/cr-docker/actions/workflows/dockerimage-latest.yml/badge.svg)](https://github.com/crowdrender/cr-docker/actions/workflows/dockerimage-latest.yml)
 
-## Instructions for non Cuda based images
+## Instructions for normal images (Linux)
 These images are based on [debian:stable-slim](https://hub.docker.com/_/debian/tags?page=1&name=stable-slim) and intended for use on linux.
 They do install the Nvidia container toolkit and setup for providing GPU acceleration, though our testing with real GPUs is still a work in progress.
 
@@ -67,10 +67,10 @@ The CrowdRender documentation can be found [here](https://www.crowd-render.com/l
 
 | Docker tag          | Blender version | Default CR_VERSION value | Actual version downloaded              |
 |:-------------------:|:---------------:|:--------------------:|:--------------------------------:|
-| `bl_3.6-Cuda`       | `3.6.5`  (LTS)  | `latest`                 | latest available for your [account](https://discovery.crowd-render.com/sign-up) |
-| `bl_3.5-Cuda`       | `3.5.1`         | `latest`                 |                                   |
-| `bl_3.4-Cuda`       | `3.4.1`         | `latest`                 |                                   |
-| `bl_3.3-Cuda`       | `3.3.12` (LTS)  | `latest`                 |                                   |
+| `bl_3.6-DockerDesktop`       | `3.6.5`  (LTS)  | `latest`                 | latest available for your [account](https://discovery.crowd-render.com/sign-up) |
+| `bl_3.5-DockerDesktop`       | `3.5.1`         | `latest`                 |                                   |
+| `bl_3.4-DockerDesktop`       | `3.4.1`         | `latest`                 |                                   |
+| `bl_3.3-DockerDesktop`       | `3.3.12` (LTS)  | `latest`                 |                                   |
 
 ## Instructions for Cuda based images - intended for Docker Desktop on windows
 
