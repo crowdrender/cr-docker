@@ -23,7 +23,7 @@ jobs:
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
       run: | 
         docker login -u $HUB_NAME -p $HUB_KEY
-        docker build . --pull --no-cache --file Dockerfile --tag crowdrender/blender-crowdrender:latest --build-arg BLENDER_DL_URL="${BLENDER_URL}"
+        docker build . --pull --no-cache --file Dockerfile --tag crowdrender/blender-plugin:latest --build-arg BLENDER_DL_URL="${BLENDER_URL}"
         docker tag crowdrender/blender-plugin:latest crowdrender/blender-plugin:bl_${{matrix.version[0]}}
         docker push crowdrender/blender-plugin:bl_${{matrix.version[0]}}
 
@@ -43,6 +43,6 @@ jobs:
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
       run: | 
         docker login -u $HUB_NAME -p $HUB_KEY
-        docker build . --pull --no-cache --file Dockerfile.Cuda --tag crowdrender/blender-crowdrender:latest --build-arg BLENDER_DL_URL="${BLENDER_URL}"
+        docker build . --pull --no-cache --file Dockerfile.Cuda --tag crowdrender/blender-plugin:latest --build-arg BLENDER_DL_URL="${BLENDER_URL}"
         docker tag crowdrender/blender-plugin:latest crowdrender/blender-plugin:bl_${{ matrix.version[0] }}-DockerDesktop
         docker push crowdrender/blender-plugin:bl_${{ matrix.version[0] }}-DockerDesktop
