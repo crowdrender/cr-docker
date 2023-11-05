@@ -78,4 +78,4 @@ ADD scripts/install_addon.py .
 RUN chmod +x ./start_cr_server.sh
 RUN chmod -R 777 /CR
 
-ENTRYPOINT /CR/scripts/start_cr_server.sh
+ENTRYPOINT /CR/start_cr_server.sh
