@@ -2,27 +2,45 @@ FROM debian:stable-slim
 
 LABEL maintainer="info@crowdrender.com.au"
 
-RUN apt-get update 	&& apt-get install -y \
-	curl\
-    gnupg2
+RUN \
+    apt-get update \
+    && apt-get install -y --no-install-recommends \
+    # Blender dependencies
+    libxi6 \
+    libxrender1 \
+    libglu1-mesa \
+    libgl1-mesa-glx \
+    libxxf86vm1 \
+    libxkbcommon0 \
+    libsm6 \
+    # other dependencies
+    ca-certificates \
+    gnupg2 \
+    # some useful utils
+    xz-utils \
+    screen \
+    unzip \
+    7zip \
+    curl \
+    vim \
+    jq
 
+# probably not needed, but adding anyway for now
 RUN curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
   && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
     sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
     tee /etc/apt/sources.list.d/nvidia-container-toolkit.list \
   && \
     apt-get update
+RUN apt-get install -y nvidia-container-toolkit
 
-# Run installs on required dependencies for Blender
-RUN apt-get install -y \
-    libfreetype6 \
-    libglu1-mesa \
-    libgl1-mesa-dev \
-    libxi6 \
-    libxrender1 \
-    xz-utils \
-    nvidia-container-toolkit \
-    && apt-get -y autoremove && rm -rf /var/lib/apt/lists/*
+# cleanup
+RUN \
+    apt-get autoremove -y && \
+    apt-get autoclean -y && \
+    apt-get clean -y && \
+    apt-get purge -y && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Blender variables used for specifying the blender version
 
