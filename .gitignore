@@ -4,6 +4,7 @@
 push_readme_to_dockerhub.sh
 
 *.log
+*.bak
 .vscode
 
 .DS_Store
