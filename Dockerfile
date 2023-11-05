@@ -57,9 +57,8 @@ RUN echo ${BLENDER_DL_URL}
 WORKDIR /usr/local/blender
 
 # Download and unpack Blender
-RUN curl -SL "$BLENDER_DL_URL" -o blender.tar.xz \
-    && tar -xf blender.tar.xz --strip-components=1 && rm blender.tar.xz
-
+ADD $BLENDER_DL_URL blender.tar.xz
+RUN tar -xf blender.tar.xz --strip-components=1 && rm blender.tar.xz
 
 # Set environment vars to be used when the image is running in a container
 
