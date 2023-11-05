@@ -1,5 +1,5 @@
-#! /bin/bash
-# (c) Crowdrender 2019 - 2022
+#! /usr/bin/env bash
+# (c) Crowdrender 2019 - 2023
 
 BLENDER_ADDONS_PATH=/root/.config/blender/$BL_VERSION_SHORT/scripts/addons
 TRUE=true
