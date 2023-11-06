@@ -1,59 +1,48 @@
 name: Dockerimage Builder
 
 on:
-  push:
-    branches: 
-      - master
-  workflow_dispatch:
+ push:
+  branches: 
+    - master
+ workflow_dispatch:
 
 jobs:
-  latest:
+  build-and-push-vanilla-images:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        version: [["3.6", "3.6.5"], ["3.5", "3.5.1"], ["3.4", "3.4.1"], ["3.3", "3.3.12"]]
     steps:
     - uses: actions/checkout@v2
+    - id: generate-url
+      run: |
+        echo "BLENDER_URL=$(printf 'https://download.blender.org/release/Blender%s/blender-%s-linux-x64.tar.xz' ${{ matrix.version[0] }} ${{ matrix.version[1] }})" >> $GITHUB_ENV
     - name: Build the Docker image
       env:
         HUB_NAME: ${{ secrets.DOCKER_NAME }}
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
-      run: |
+      run: | 
         docker login -u $HUB_NAME -p $HUB_KEY
-        
-        docker build . --pull --no-cache --file Dockerfile --tag crowdrender/blender-crowdrender:latest
-        
-        docker tag crowdrender/blender-crowdrender:latest crowdrender/blender-crowdrender:bl_3.2
-        
-        docker push crowdrender/blender-crowdrender:latest
-        docker push crowdrender/blender-crowdrender:bl_3.2
+        docker build . --pull --no-cache --file Dockerfile --tag crowdrender/blender-plugin:latest --build-arg BLENDER_DL_URL="${BLENDER_URL}"
+        docker tag crowdrender/blender-plugin:latest crowdrender/blender-plugin:bl_${{matrix.version[0]}}
+        docker push crowdrender/blender-plugin:bl_${{matrix.version[0]}}
 
-  LTSone:
+  build-and-push-dockerdesktop-images:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        version: [["3.6", "3.6.5"], ["3.5", "3.5.1"], ["3.4", "3.4.1"], ["3.3", "3.3.12"]]
     steps:
     - uses: actions/checkout@v2
+    - id: generate-url
+      run: |
+        echo "BLENDER_URL=$(printf 'https://download.blender.org/release/Blender%s/blender-%s-linux-x64.tar.xz' ${{ matrix.version[0] }} ${{ matrix.version[1] }})" >> $GITHUB_ENV
     - name: Build the Docker image
       env:
         HUB_NAME: ${{ secrets.DOCKER_NAME }}
         HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
-      run: |
+      run: | 
         docker login -u $HUB_NAME -p $HUB_KEY
-        
-        docker build . --pull --no-cache --file Dockerfile.293LTS --tag crowdrender/blender-crowdrender:bl_2.93
-        
-        docker push crowdrender/blender-crowdrender:bl_2.93
-
-  LTStwo:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      env:
-        HUB_NAME: ${{ secrets.DOCKER_NAME }}
-        HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
-      run: |
-        docker login -u $HUB_NAME -p $HUB_KEY
-        
-        docker build . --pull --no-cache --file Dockerfile.283LTS --tag crowdrender/blender-crowdrender:bl_2.83
-        
-        docker push crowdrender/blender-crowdrender:bl_2.83
+        docker build . --pull --no-cache --file Dockerfile.Cuda --tag crowdrender/blender-plugin:latest --build-arg BLENDER_DL_URL="${BLENDER_URL}"
+        docker tag crowdrender/blender-plugin:latest crowdrender/blender-plugin:bl_${{ matrix.version[0] }}-DockerDesktop
+        docker push crowdrender/blender-plugin:bl_${{ matrix.version[0] }}-DockerDesktop

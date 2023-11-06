@@ -1,4 +1,5 @@
 cpu:
-	docker build . --file Dockerfile --no-cache --tag cr:cpu
+	docker build . --file Dockerfile --tag blender-plugin:cpu
+
 gpu:
-	docker build . --file Dockerfile.cuda10 --no-cache --tag cr:gpu
+	docker build . --file Dockerfile.Cuda --tag blender-plugin:gpu
