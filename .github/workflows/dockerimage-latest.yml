@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [["3.6", "3.6.5"], ["3.5", "3.5.1"], ["3.4", "3.4.1"], ["3.3", "3.3.12"]]
+        version: [["3.6", "3.6.5"], ["3.5", "3.5.1"], ["3.4", "3.4.1"], ["3.3", "3.3.12"],["4.0", "4.0.1"]]
     steps:
     - uses: actions/checkout@v2
     - id: generate-url
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [["3.6", "3.6.5"], ["3.5", "3.5.1"], ["3.4", "3.4.1"], ["3.3", "3.3.12"]]
+        version: [["3.6", "3.6.5"], ["3.5", "3.5.1"], ["3.4", "3.4.1"], ["3.3", "3.3.12"], ["4.0", "4.0.1"]]
     steps:
     - uses: actions/checkout@v2
     - id: generate-url
