@@ -45,23 +45,23 @@ RUN \
 # Blender variables used for specifying the blender version
 
 ARG BLENDER_OS="linux-x64"
-ARG BL_VERSION_SHORT="3.6"
-ARG BL_VERSION_FULL="3.6.5"
-ARG BLENDER_DL_URL=https://download.blender.org/release/Blender${BL_VERSION_SHORT}/blender-${BL_VERSION_FULL}-${BLENDER_OS}.tar.xz
+ARG BL_VERSION_SHORT="4.0"
+ARG BL_VERSION_FULL="4.0.1"
+ARG BL_DL_ROOT_URL="https://ftp.nluug.nl/pub/graphics/blender/release/"
+ARG BLENDER_DL_URL=${BL_DL_ROOT_URL}/Blender${BL_VERSION_SHORT}/blender-${BL_VERSION_FULL}-${BLENDER_OS}.tar.xz
 
 
-RUN echo "Blender URL is $BLENDER_DL_URL"
+RUN echo "Blender Download URL is $BLENDER_DL_URL"
 RUN echo ${BLENDER_DL_URL}
 
 # Set the working directory where we'll unpack blender
 WORKDIR /usr/local/blender
 
 # Download and unpack Blender
-ADD $BLENDER_DL_URL blender.tar.xz
-RUN tar -xf blender.tar.xz --strip-components=1 && rm blender.tar.xz
+RUN curl -SL "$BLENDER_DL_URL" -o blender.tar.xz \
+        && tar -xf blender.tar.xz --strip-components=1 && rm blender.tar.xz;
 
 # Set environment vars to be used when the image is running in a container
-
 ENV use_local_cr false
 ENV cr_version latest
 ENV persistent false
