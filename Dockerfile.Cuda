@@ -21,7 +21,7 @@ RUN apt-get update 	&& apt-get install -y \
 ARG BLENDER_OS="linux-x64"
 ARG BL_VERSION_SHORT="4.0"
 ARG BL_VERSION_FULL="4.0.1"
-ARG BL_DL_ROOT_URL="https://ftp.nluug.nl/pub/graphics/blender/release/"
+ARG BL_DL_ROOT_URL="https://mirrors.ocf.berkeley.edu/blender/release/"
 ARG BLENDER_DL_URL=${BL_DL_ROOT_URL}/Blender${BL_VERSION_SHORT}/blender-${BL_VERSION_FULL}-${BLENDER_OS}.tar.xz
 
 
@@ -32,7 +32,7 @@ RUN echo ${BLENDER_DL_URL}
 WORKDIR /usr/local/blender
 
 # Download and unpack Blender
-RUN curl -SL "$BLENDER_DL_URL" -o blender.tar.xz \
+RUN curl -SL $BLENDER_DL_URL -o blender.tar.xz \
         && tar -xf blender.tar.xz --strip-components=1 && rm blender.tar.xz;
 
 # Set environment vars to be used when the image is running in a container
